@@ -55,6 +55,12 @@ public class ServicePLC implements PlcService {
 
     }
 
+    @Override
+    public Boolean deletePLC(PLC plc) {
+        plcRepository.delete(plc);
+        return true;
+    }
+
 //    @Scheduled(fixedRate = 5000)
 //    private void taskPLC() {
 //        if (!namePLC.equals("none")) {

@@ -1,0 +1,30 @@
+<body>
+
+
+<div class="alert alert-success" role="alert">
+  <form #plcForm="ngForm">
+    <div class="form-group">
+      <label for="namePLC">NamePLC</label>
+      <input class="form-control" id="namePLC" type="text" name="namePLC" [(ngModel)]="plc.namePLC">
+    </div>
+    <div class="form-group">
+      <label for="statusPLC">statusPLC</label>
+      <input class="form-control" id="statusPLC" type="text" name="statusPLC" [(ngModel)]="plc.statusPLC">
+    </div>
+    <button class="btn btn-outline-primary" type="submit" (click)="onCreatePLC()">Submit</button>
+
+  </form>
+</div>
+
+<button class="btn btn-outline-primary" (click)="onFindAllPLC()">All PLC</button>
+
+
+<div class="alert alert-warning" role="alert">
+  <ul *ngFor="let plc of plcAll">
+    <li class="alert alert-danger" role="alert">
+      <p>{{plc|json}}</p>
+      <button class="btn btn-outline-dark" (click)="onDeletePLC(plc)">DELETE</button>
+    </li>
+  </ul>
+</div>
+</body>

@@ -12,4 +12,5 @@ public interface PlcService {
     void saveAllPLC(List<PLC> list);
     void init(int id);
 
+    Boolean deletePLC(PLC plc);
 }
